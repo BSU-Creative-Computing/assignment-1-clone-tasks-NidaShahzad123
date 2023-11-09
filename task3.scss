@@ -1,0 +1,179 @@
+@mixin breakpoint($minwidth, $maxwidth){
+    @media screen and (min-width:$minwidth ) and (max-width:$maxwidth){
+        @content;
+    }
+}
+// Mixin centering elements
+@mixin center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+$header_footercolor:#8ccff7;
+$circle_hover:#565555;
+$case1:#ffa372;
+$case2:#ed6663;
+$case3:#43658b;                            
+$case4:#4e89ae;
+//Lenghts
+
+$lenght1 :400px;
+$lenght2:300px;
+$lenght3:200px;
+
+//radius
+$radius1 :70px;
+$radius2: 80px;
+$radius3: 90px;
+$radius4:100px;
+//height
+$footer_height:50px;
+
+
+#sizes{
+    background-color: $header_footercolor;
+    height: $lenght1;
+    @include center;
+}
+//Arrangment of box
+#case{
+    height: $lenght1;
+    width: $lenght1;
+    @include center();
+    background-color: rgb(207, 207, 207);
+    color: rgb(142, 135, 135);
+}
+
+//Sizes
+#area1,#area2{
+    display: none;
+}
+#lines{
+    background-color: white;
+    width:100%;
+    height: 40px;
+}
+  
+
+.blue,.darkblue,.pastelred,.pastelorange{
+    width: 100%;
+    height: 40px;
+    
+}
+.blue{
+    background-color: $case1;
+}
+.darkblue{
+    background-color: $case2;
+}
+.pastelred{
+    background-color: $case3;
+}
+.pastelorange{
+    background-color: $case4;
+}
+ //CIRCLES
+.shapes{
+   
+    border: black 1px solid;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.smallest{
+    width: $radius1;
+    height: $radius1;
+    border-radius: 50%;
+    background-color: $case1;
+}
+.smaller{
+    width: $radius2;
+    height: $radius2;
+    border-radius: 50%;
+    background-color: $case2;
+}
+.medium{
+    width: $radius3;
+    height: $radius3;
+    background-color: $case3;
+    border-radius: 50%;
+}
+.large{
+    width: $radius4;
+    height: $radius4;
+    border-radius: 50%;
+    background-color: $case4;
+}
+//hover effect
+.smallest:hover,.smaller:hover,.medium:hover,.large:hover,.blue:hover,.darkblue:hover,.pastelred:hover,.pastelorange:hover{
+    background-color: #565555;
+}
+footer{
+    background-color: $header_footercolor;
+    height: 50px;
+
+}
+@media screen and (max-width:620px){
+    #sizes{
+        height: $lenght2;
+        background-color: $header_footercolor;
+        @include center();
+    }
+    #area,#area1{
+        display: none;
+    }
+    #area2{
+        display: block;
+    }
+    .shapes{
+        height: 400px;
+        @include center();
+        flex-direction: column;
+    }
+    #case{
+        height: $lenght2;
+        width: $lenght2;
+    }
+    .smallest:hover,.smaller:hover,.medium:hover,.large:hover,.blue:hover,.darkblue:hover,.pastelred:hover,.pastelorange:hover{
+        background-color: #565555;
+    }
+    footer{
+        background-color: $header_footercolor;
+    }
+    
+}
+@media screen and (max-width:480px) {
+    #sizes{
+        height: $lenght3;
+        background-color: $header_footercolor;
+        @include center();
+    }
+    #area,#area1{
+        display: none;
+    }
+    #area2{
+        display: block;
+    }
+    .shapes{
+        height: 400px;
+        @include center();
+        flex-direction: column;
+    }
+    #case{
+        height: $lenght3;
+        width: $lenght3;
+    }
+    .smallest:hover,.smaller:hover,.medium:hover,.large:hover,.lightblue:hover,.darkblue:hover,.red:hover,.orange:hover{
+        background-color: #565555;
+    }
+    footer{
+        background-color: $header_footercolor;
+        
+    }
+    
+}
